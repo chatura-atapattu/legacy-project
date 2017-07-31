@@ -1,4 +1,5 @@
 class MainController < ApplicationController
   def index
-  end
+  render :file => 'public/index.html'
+end
 end
