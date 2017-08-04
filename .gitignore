@@ -16,6 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/vender/tmp/*
 
 /node_modules
 /yarn-error.log
