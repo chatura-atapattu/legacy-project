@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "viewport", :content=> "width=device-width, initial-scale=1"}
+    %title Veracity Project
+    = favicon_link_tag 'favicon-32x32.png', rel: 'icon', type: 'image/png', sizes: '32x32'
+    = favicon_link_tag 'favicon-16x16.png', rel: 'icon', type: 'image/png', sizes: '16x16'
+    = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body{ "data-spy" => "scroll", "data-target" => "#navbar" }
+    = yield

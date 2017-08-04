@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+$screen-sm-min: 768px
+$screen-md-min: 992px
+
+@font-face
+  font-family: 'Avenir'
+  src: url('avenir-next-regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Gotham'
+  src: url('gotham-medium-regular.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+body
+  color: #4A4A4A
+  font-family: 'Avenir'
+  font-size: 10pt
+  @media screen and (max-width: $screen-sm-min)
+    font-size: 12pt
+  @media screen and (min-width: $screen-md-min)
+    font-size: 14pt
+
+a
+  color: #38A28C
+  text-decoration: none
+  &:hover
+    color: #30C0CA
+    text-decoration: none
+
+.container-fluid
+  padding: 0
+
+.navbar-default
+  background-color: transparent
+  border-color: transparent
+
+.navbar-default.navbar-default-scroll
+  background-color: black
+
+.navbar-default .navbar-nav > .active > a
+  background-color: #BFDFC6
+
+.navbar-nav.navbar-nav
+  li
+    margin-left: 10px
+    margin-right: 10px
+    a
+      color: white
+      &:hover
+        color: #30C0CA
+      &:visited
+        color: white
+  li.donate
+    background-color: #38A28C
+    border-radius: 0 0 10px 10px
+    a:hover
+      color: #4A4A4A
+
+.navbar-brand
+  -webkit-transition: height 0.3s ease-in-out
+  -moz-transition: height 0.3s ease-in-out
+  -ms-transition: height 0.3s ease-in-out
+  -o-transition: height 0.3s ease-in-out
+  transition: height 0.3s ease-in-out
+  @media screen and (max-width: $screen-sm-min)
+    padding: 5px
+    img
+      height: 40px
+
+.navbar-brand.navbar-brand-scroll
+  padding: 5px
+  img
+    height: 40px
+
+.header
+  font-family: 'Gotham'
+  font-size: 20pt
+  @media screen and (max-width: $screen-sm-min)
+    font-size: 25pt
+  @media screen and (min-width: $screen-md-min)
+    font-size: 30pt
+  text-transform: uppercase
+
+.hero-section
+  color: white
+  position: relative
+  width: 100%
+  img
+    width: 100%
+  .hero-text
+    align-items: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    left: 0
+    position: absolute
+    top: 55%
+    width: 100%
+    .hero-section-title
+      text-align: center
+    .hero-section-subtitle
+      text-align: center
+
+.section
+  padding-top: 30px
+  padding-bottom: 30px
+  padding-left: 5%
+  padding-right: 5%
+  .section-header
+    text-align: center
+
+  .section-text
+    padding-top: 15px
+
+.faq
+  li
+    padding-top: 10px
+    padding-bottom: 10px
+    p
+      padding-top: 10px
