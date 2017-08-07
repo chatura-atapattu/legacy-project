@@ -17,6 +17,12 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+$vpGreen: #38A28C
+$vpTeal: #30C0CA
+$vpLightGreen: #BFDFC6
+$vpLightGrey: #E0E0E0
+$vpDarkGrey: #4A4A4A
+
 @font-face
   font-family: 'Avenir'
   src: font-url('avenir-next-regular.ttf') format('truetype')
@@ -30,7 +36,7 @@
   font-style: normal
 
 body
-  color: #4A4A4A
+  color: $vpDarkGrey
   font-family: 'Avenir'
   font-size: 8pt
   @media screen and (min-width: $screen-sm-min)
@@ -41,10 +47,10 @@ body
     font-size: 14pt
 
 a
-  color: #38A28C
+  color: $vpGreen
   text-decoration: none
   &:hover
-    color: #30C0CA
+    color: $vpTeal
     text-decoration: none
 
 .container-fluid
@@ -53,12 +59,16 @@ a
 .navbar-default
   background-color: transparent
   border-color: transparent
+  
+.navbar-collapse
+  @media screen and (max-width: $screen-md-min)
+    background-color: $vpLightGrey
 
 .navbar-default.navbar-default-scroll
   background-color: black
 
 .navbar-default .navbar-nav > .active > a
-  background-color: #BFDFC6
+  background-color: $vpLightGreen
 
 .navbar-nav.navbar-nav
   li
@@ -67,14 +77,28 @@ a
     a
       color: white
       &:hover
-        color: #30C0CA
+        color: $vpTeal
       &:visited
         color: white
   li.donate
-    background-color: #38A28C
+    background-color: $vpGreen
     border-radius: 0 0 10px 10px
     a:hover
-      color: #4A4A4A
+      color: $vpDarkGrey
+  @media screen and (max-width: $screen-md-min)
+    li
+      margin: 0
+      a
+        color: $vpDarkGrey
+        &:hover
+          color: $vpTeal
+        &:visited
+          color: $vpDarkGrey
+    li.donate
+      background-color: $vpGreen
+      border-radius: 0
+      a:hover
+        color: white
 
 .navbar-brand
   -webkit-transition: height 0.3s ease-in-out
