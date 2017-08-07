@@ -17,9 +17,6 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
-$screen-sm-min: 768px
-$screen-md-min: 992px
-
 @font-face
   font-family: 'Avenir'
   src: font-url('avenir-next-regular.ttf') format('truetype')
@@ -35,10 +32,12 @@ $screen-md-min: 992px
 body
   color: #4A4A4A
   font-family: 'Avenir'
-  font-size: 10pt
-  @media screen and (max-width: $screen-sm-min)
-    font-size: 12pt
+  font-size: 8pt
+  @media screen and (min-width: $screen-sm-min)
+    font-size: 10pt
   @media screen and (min-width: $screen-md-min)
+    font-size: 12pt
+  @media screen and (min-width: $screen-lg-min)
     font-size: 14pt
 
 a
@@ -95,10 +94,12 @@ a
 
 .header
   font-family: 'Gotham'
-  font-size: 20pt
-  @media screen and (max-width: $screen-sm-min)
-    font-size: 25pt
+  font-size: 12pt
+  @media screen and (min-width: $screen-sm-min)
+    font-size: 16pt
   @media screen and (min-width: $screen-md-min)
+    font-size: 20pt
+  @media screen and (min-width: $screen-lg-min)
     font-size: 30pt
   text-transform: uppercase
 
@@ -142,6 +143,7 @@ a
       .carousel-caption
         a
         .header
+          text-transform: none
         .subtitle
 
 .faq
