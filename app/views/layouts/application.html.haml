@@ -19,4 +19,43 @@
       ga('send', 'pageview');
 
   %body{ "data-spy" => "scroll", "data-target" => "#navbar" }
-    = yield
+    .container-fluid
+      - if params[:action] == "index"
+        .hero-section
+          = image_tag("hero.png")
+          .hero-text
+            .hero-section-title.header
+              Inspiring change in our communities
+            .hero-section-subtitle
+              A community of volunteers and remote professionals that empower communities to make a positive impact
+      %nav.navbar.navbar-default.navbar-fixed-top
+        .container
+          .navbar-header
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.navbar-brand{href: ( root_path unless current_page?(controller: 'main', action: 'index')) }
+              = image_tag("logo.png")
+          #navbar.collapse.navbar-collapse
+            %ul.nav.navbar-nav.navbar-right{ :role=>"tablist" }
+              - if defined? @sections
+                - @sections.each do |section|
+                  %li= link_to section[:title], section[:url]
+              %li.donate
+                = link_to "Donate", @currentDonationURL, :target => "_blank"
+    
+      .row
+        = yield
+        .section.footer
+          .footer-item
+            = '&#0169;2017&nbsp;'.html_safe + 'Veracity Project'
+          .footer-seperator
+            |
+          .footer-item
+            = link_to link_to "Privacy Policy", controller: "main", action: "privacypolicy"
+          .footer-seperator
+            |
+          .footer-item
+            = link_to link_to "Terms and Conditions", controller: "main", action: "termsandconditions"

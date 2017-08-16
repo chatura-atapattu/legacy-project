@@ -16,7 +16,9 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(document).ready(function() {
+var scrollHandler;
+
+$(document).on("turbolinks:load", function() {
   $('body').scrollspy({ target: '#navbar' });
 
   var $root = $('html, body');
@@ -26,14 +28,26 @@ $(document).ready(function() {
       }, 500);
       return false;
   });
-});
 
-$(document).on('scroll', function(){
-  if($(document).scrollTop() > 100) {
+  if (scrollHandler == null) {
+    scrollHandler = function(){
+      if($(document).scrollTop() > 100) {
+        $('.navbar-brand').addClass('navbar-brand-scroll');
+        $('.navbar-default').addClass('navbar-default-scroll');
+      } else {
+        $('.navbar-brand').removeClass('navbar-brand-scroll');
+        $('.navbar-default').removeClass('navbar-default-scroll');
+      }
+    };
+  }
+
+  if($('.hero-section').length) {
+    $(document).on('scroll',scrollHandler);
+  } else {
+    $(document).off('scroll',scrollHandler);
     $('.navbar-brand').addClass('navbar-brand-scroll');
     $('.navbar-default').addClass('navbar-default-scroll');
-  } else {
-    $('.navbar-brand').removeClass('navbar-brand-scroll');
-    $('.navbar-default').removeClass('navbar-default-scroll');
+    var navHeight = $('.navbar').height();
+    $(".row").css("margin-top", navHeight);
   }
 });
