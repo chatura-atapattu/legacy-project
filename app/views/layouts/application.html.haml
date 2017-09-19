@@ -43,8 +43,9 @@
               - if defined? @sections
                 - @sections.each do |section|
                   %li= link_to section[:title], section[:url]
-              %li.donate
-                = link_to "Donate", @currentDonationURL, :target => "_blank"
+              - if @current_donation_url.present?
+                %li.donate
+                  = link_to "Donate", @current_donation_url, :target => "_blank"
     
       .row
         = yield
@@ -54,8 +55,8 @@
           .footer-seperator
             |
           .footer-item
-            = link_to link_to "Privacy Policy", controller: "main", action: "privacypolicy"
+            = link_to "Privacy Policy", controller: "main", action: "privacypolicy"
           .footer-seperator
             |
           .footer-item
-            = link_to link_to "Terms and Conditions", controller: "main", action: "termsandconditions"
+            = link_to "Terms and Conditions", controller: "main", action: "termsandconditions"
