@@ -1,0 +1,26 @@
+.section.aboutus
+  .section-header.header
+    About us
+  .section-text
+    %p
+      The Veracity Project is a diverse community of remote professionals traveling with
+      %a{:href => 'https://remoteyear.com', :target => '_blank'}
+        Remote Year
+      who wish to leave every community we call home, however temporary, a little better off than when we found it. 
+    %p Early on in our journey, we recognized that we have a unique opportunity to create a tangible impact in a short amount of time and in an affordable and transparent way. The Veracity Project works with local groups with minimal overhead by tapping into the collective expertise found within our remote community. You can help us with each local initiative by making a donation and sharing our efforts with all of your social networks.
+    %p We think it’s important that people understand the impact of their monetary donation (no matter how small). At the conclusion of each campaign, we follow up with each and every donor with videos and other metrics to illustrate the positive changes we were able to make together in these local communities.
+    %p Small contributions from a large number of people can help create substantive change in communities around the world. If you share our vision, please consider donating to one of our campaigns!
+
+.section.aboutus
+  .section-header.header
+    Who are we?
+  .section-text
+    .veritians
+      - @profiles.each do |profile|
+        .veritian
+          .photo
+            = image_tag 'aboutus/' + profile[:photo]
+          .name.bolder.center
+            = profile[:name]
+          .location.italics.center
+            = profile[:location]

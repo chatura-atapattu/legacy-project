@@ -174,13 +174,63 @@ a
   margin-bottom: 15px
   .carousel-inner
     .item
-      img
-        margin: 0 auto
-      .carousel-caption
-        a
+      display: flex
+      height: 300px
+      @media screen and (min-width: $screen-sm-min)
+        height: 400px
+      @media screen and (min-width: $screen-md-min)
+        height: 500px
+      @media screen and (min-width: $screen-lg-min)
+        height: 600px
+      .media
+        align-items: center
+        display: flex
+        justify-content: center
+        width: 70%
+        img
+          max-height: 100%
+          margin: 0 auto
+          max-width: 100%
+      .text
+        background-color: black
+        color: white
+        display: flex
+        flex-direction: column
+        padding: 15px
+        width: 30%
         .header
           text-transform: none
         .subtitle
+        .content
+          overflow: scroll
+          padding-top: 10px
+      @media screen and (orientation: portrait)
+        flex-direction: column
+        .media
+          width: 100%
+        .text
+          width: 100%
+
+.veritians
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  .veritian
+    padding: 15px
+    .photo
+      img
+        width: 200px
+        height: auto
+    .name
+      padding-top: 10px
+    .location
+      font-size: 6pt
+      @media screen and (min-width: $screen-sm-min)
+        font-size: 8pt
+      @media screen and (min-width: $screen-md-min)
+        font-size: 10pt
+      @media screen and (min-width: $screen-lg-min)
+        font-size: 12pt
 
 .faq
   li
