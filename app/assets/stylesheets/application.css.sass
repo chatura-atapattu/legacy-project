@@ -174,42 +174,13 @@ a
   margin-bottom: 15px
   .carousel-inner
     .item
-      display: flex
-      height: 300px
-      @media screen and (min-width: $screen-sm-min)
-        height: 400px
-      @media screen and (min-width: $screen-md-min)
-        height: 500px
-      @media screen and (min-width: $screen-lg-min)
-        height: 600px
-      .media
-        align-items: center
-        display: flex
-        justify-content: center
-        width: 70%
-        img
-          max-height: 100%
-          margin: 0 auto
-          max-width: 100%
-      .text
-        background-color: black
-        color: white
-        display: flex
-        flex-direction: column
-        padding: 15px
-        width: 30%
+      img
+        margin: 0 auto
+      .carousel-caption
+        a
         .header
           text-transform: none
         .subtitle
-        .content
-          overflow: scroll
-          padding-top: 10px
-      @media screen and (orientation: portrait)
-        flex-direction: column
-        .media
-          width: 100%
-        .text
-          width: 100%
 
 .veritians
   display: flex

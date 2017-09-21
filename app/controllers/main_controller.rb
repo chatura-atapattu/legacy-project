@@ -3,7 +3,7 @@ class MainController < ApplicationController
 
   def common
     @currentDonationURL = 'https://www.generosity.com/community-fundraising/t-r-a-p-veracity-project-sofia-bulgaria'
-    @sections = [{url: '/initiatives', title:'Initiatives'}, {url: '/aboutus', title: 'About Us'}, {url: '/faq', title: 'FAQ'}] 
+    @sections = [{url: '/', title:'Initiatives'}, {url: 'aboutus', title: 'About Us'}, {url: 'faq', title: 'FAQ'}] 
   end
 
   def index
