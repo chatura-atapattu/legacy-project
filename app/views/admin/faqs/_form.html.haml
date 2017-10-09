@@ -1,0 +1,18 @@
+.row
+  .col-sm-8
+    = form_for [@group, @faq] do |f|
+      - if @faq.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@faq.errors.count, "error")} prohibited this faq from being saved:"
+          %ul
+            - @faq.errors.full_messages.each do |message|
+              %li= message
+      .field.form-group
+        = f.label :question, class: 'control-label'
+        = f.text_field :question, class: 'form-control'
+      .field.form-group
+        = f.label :answer, class: 'control-label'
+        = f.hidden_field :answer, id: :answer
+        %trix-editor{input: "answer"}
+      .actions
+        = f.submit 'Save', class: 'btn btn-primary'

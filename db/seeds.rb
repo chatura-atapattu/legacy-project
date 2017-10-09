@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 group = Group.create name: 'Balboa', donation_url: ''
-add_faqs group
+# add_faqs group
 group.charities.create! name: 'Red Cross',
                         description: "Add some description for number 1",
                         banner_image_url: 'http://images.tritondigitalcms.com/6616/sites/377/2017/08/28111305/American-Red-Cross.jpg',

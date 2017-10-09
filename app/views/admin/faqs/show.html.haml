@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+  %b Group:
+  = @faq.group.name
+%p
+  %b Question:
+  = @faq.question
+%p
+  %b Answer:
+  .trix-content
+    = @faq.answer.html_safe
+
+= link_to 'Edit', edit_group_faq_path(@faq)
+\|
+= link_to 'Back', group_faqs_path

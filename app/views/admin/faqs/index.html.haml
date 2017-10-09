@@ -1,0 +1,25 @@
+%h1 Listing faqs
+
+%table.table
+  %thead
+    %tr
+      %th Question
+      %th Answer
+      %th
+      %th
+      %th
+
+  %tbody
+    - @faqs.each do |faq|
+      %tr
+        %td= faq.question
+        %td
+          .trix-content
+            = faq.answer.html_safe
+        %td= link_to 'Show', group_faq_url(@group, faq)
+        %td= link_to 'Edit', edit_group_faq_path(@group, faq)
+        %td= link_to 'Destroy', group_faq_url(@group, faq), method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Faq', new_group_faq_path(@group)
