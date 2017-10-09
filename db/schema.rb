@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(version: 20171009024049) do
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.string "donation_url"
+    t.string "homepage_banner_image"
+    t.string "logo_image"
+    t.string "favicon_image"
+    t.string "favicon_image_16_by_16"
+    t.string "favicon_image_32_by_32"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

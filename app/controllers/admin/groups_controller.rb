@@ -69,6 +69,6 @@ class Admin::GroupsController < Admin::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :donation_url)
+      params.require(:group).permit(:name, :donation_url, :homepage_banner_image, :logo_image, :favicon_image, :favicon_image_16_by_16, :favicon_image_32_by_32)
     end
 end

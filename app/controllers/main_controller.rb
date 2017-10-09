@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  before_action :set_group
   before_action :set_current_donation_url
 
   def index
@@ -24,7 +25,11 @@ class MainController < ApplicationController
   end
 
   def group
-    Group.first
+    @group ||= Group.first
+  end
+
+  def set_group
+    group
   end
 
 end

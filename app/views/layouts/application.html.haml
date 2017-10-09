@@ -22,7 +22,7 @@
     .container-fluid
       - if params[:action] == "index"
         .hero-section
-          = image_tag("hero.png")
+          = image_tag(@group.homepage_banner_image)
           .hero-text
             .hero-section-title.header
               Inspiring change in our communities
@@ -37,7 +37,7 @@
               %span.icon-bar
               %span.icon-bar
             %a.navbar-brand{href: ( root_path unless current_page?(controller: 'main', action: 'index')) }
-              = image_tag("logo.png")
+              = image_tag(@group.logo_image)
           #navbar.collapse.navbar-collapse
             %ul.nav.navbar-nav.navbar-right{ :role=>"tablist" }
               - if defined? @sections
