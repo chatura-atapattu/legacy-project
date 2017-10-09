@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %h2 About us:
+  .trix-content
+    = @group_detail.about_us.html_safe
+%p
+  %h2 Initiatives:
+  .trix-content
+    = @group_detail.initiatives.html_safe
+
+= link_to 'Edit', edit_group_group_detail_path(@group, @group_detail)
+\|
+= link_to 'Back', group_group_details_path(@group_detail)

@@ -1,0 +1,27 @@
+%h1 Listing group_details
+
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %th About us
+      %th Initiatives
+      %th
+      %th
+      %th
+
+  %tbody
+    - @group_details.each do |group_detail|
+      %tr
+        %td
+          .trix-content
+            = group_detail.about_us.html_safe
+        %td
+          .trix-content
+            = group_detail.initiatives.html_safe
+        %td= link_to 'Show', group_group_detail_path(@group, group_detail)
+        %td= link_to 'Edit', edit_group_group_detail_path(@group, group_detail)
+
+%br
+
+- unless @group.detail
+  = link_to 'New Group detail', new_group_group_detail_path(@group)

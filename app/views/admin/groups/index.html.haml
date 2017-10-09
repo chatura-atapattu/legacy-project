@@ -1,0 +1,29 @@
+%h1 Listing groups
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Name
+      %th Donation url
+      %th Actions
+
+  %tbody
+    - @groups.each do |group|
+      %tr
+        %td= group.name
+        %td= link_to group.donation_url, group.donation_url
+        %td
+          = link_to 'Show', group
+          |
+          = link_to 'FAQs', group_faqs_path(group)
+          |
+          = link_to 'Group Details', group_group_details_path(group)
+          |
+          = link_to 'Edit', edit_group_path(group)
+          |
+          = link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+%br
+
+= link_to 'New Group', new_group_path

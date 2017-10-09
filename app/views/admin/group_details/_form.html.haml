@@ -1,0 +1,20 @@
+.row
+  .col-sm-8
+    = form_for [@group, @group_detail] do |f|
+      - if @group_detail.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@group_detail.errors.count, "error")} prohibited this group_detail from being saved:"
+          %ul
+            - @group_detail.errors.full_messages.each do |message|
+              %li= message
+
+      .field.form-group
+        = f.label :about_us, class: 'control-label'
+        = f.hidden_field :about_us, id: "about_us"
+        %trix-editor{ input: "about_us" }
+      .field.form-group
+        = f.label :initiatives, class: 'control-label'
+        = f.hidden_field :initiatives, id: "initiatives"
+        %trix-editor{ input: "initiatives" }
+      .actions
+        = f.submit 'Save', class: "btn btn-primary"

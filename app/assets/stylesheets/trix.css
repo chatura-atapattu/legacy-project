@@ -255,8 +255,7 @@ trix-editor .attachment__remove--icon {
     background-color: #eee;
     overflow-x: auto; }
   .trix-content ul, .trix-content ol, .trix-content li {
-    margin: 0;
-    padding: 0; }
+    margin: 0; }
     .trix-content ul li, .trix-content ol li, .trix-content li li {
       margin-left: 1em; }
   .trix-content img {
