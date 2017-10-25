@@ -1,0 +1,28 @@
+.section.initiatives
+  .section-header.header
+    Initiatives
+  .section-text
+    #initiatives-accordian.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+      - @initiatives.each_with_index do |initiative, index|     
+        .panel.panel-default
+          .panel-heading{:id => "heading-#{index}",  :role => "tab"}
+            %h4.panel-title
+              %a{"aria-controls" => "collapse#{index}", "aria-expanded" => "false", "data-parent" => "#initiatives-accordian", "data-toggle" => "collapse", :href => "#collapse-#{index}", :role => "button"}
+                #{initiative[:title]}
+          .panel-collapse.collapse{:id => "collapse-#{index}", :class => ("in" if initiative[:active]), "aria-labelledby" => "heading-#{index}", :role => "tabpanel"}
+            .panel-body
+              = render initiative[:partial]
+    %p The Veracity Project uses the following criterion to choose which initiatives are supported in each community we travel to:
+    %ul
+      %li
+        Leveraging local contacts to identify key initiatives in the community
+      %li
+        Greatest amount of positive impact we could achieve in a month’s time
+      %li
+        Based on manpower
+      %li
+        Donations
+      %li
+        Technical expertise
+      %li
+        In search of scalable projects where we can help no matter the level of donations.
