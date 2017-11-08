@@ -1,10 +1,8 @@
 .section.iniaitives#section-1
   .section-header.header
-    Initiatives
+    Our current initiative
   .section-text
     - @initiatives.each_with_index do |initiative, index|
       - if initiative[:active]
-        %p
-          #{initiative[:title]}
         %p
           = render initiative[:partial]

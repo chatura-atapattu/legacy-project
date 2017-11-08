@@ -2,16 +2,17 @@ class MainController < ApplicationController
   before_action :common
 
   def common
-    @currentDonationURL = 'https://www.generosity.com/community-fundraising/t-r-a-p-veracity-project-sofia-bulgaria'
+    @currentDonationURL = 'https://www.generosity.com/community-fundraising/sumando-energias'
     @sections = [
       {url: 'initiatives', title:'Initiatives'},
       {url: 'aboutus', title: 'About Us'}, {url: 'faq', title: 'FAQ'}
     ]
     @initiatives = [
       {title: 'Casa Caridad (Valencia, Spain)', partial: 'valencia', active: false},
-      {title: 'T.R.A.P. - Trotoara Room for Angry People (Sofia, Bulgaria)', partial: 'sofia', active: true},
+      {title: 'T.R.A.P. - Trotoara Room for Angry People (Sofia, Bulgaria)', partial: 'sofia', active: false},
       {title: 'Refugee Aid Serbia (Belgrade, Serbia)', partial: 'belgrade', active: false},
-      {title: 'Marrakesh, Morocco', partial: 'marrakesh', active: false}
+      #{title: 'Marrakesh, Morocco', partial: 'marrakesh', active: false},
+      {title: 'Buenos Aires, Argentina', partial: 'buenos_aires', active: true}
     ]
   end
 
