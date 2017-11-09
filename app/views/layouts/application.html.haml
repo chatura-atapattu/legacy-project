@@ -3,6 +3,11 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:name => "viewport", :content=> "width=device-width, initial-scale=1"}
+    %meta{:content => request.original_url, :property => "og:url"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "Veracity Project", :property => "og:title"}/
+    %meta{:content => "A community of volunteers and remote professionals that empower communities to make a positive impact", :property => "og:description"}/
+    %meta{:content => asset_url("logo.png"), :property => "og:image"}/
     %title Veracity Project
     = favicon_link_tag 'favicon-32x32.png', rel: 'icon', type: 'image/png', sizes: '32x32'
     = favicon_link_tag 'favicon-16x16.png', rel: 'icon', type: 'image/png', sizes: '16x16'
@@ -19,6 +24,34 @@
       ga('send', 'pageview');
 
   %body{ "data-spy" => "scroll", "data-target" => "#navbar" }
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=252646321443586';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    #twitter-root
+      :javascript
+        window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+        
+          return t;
+        }(document, "script", "twitter-wjs"));
+
     .container-fluid
       - if params[:action] == "index"
         .hero-section
@@ -59,3 +92,14 @@
             |
           .footer-item
             = link_to "Terms and Conditions", controller: "main", action: "termsandconditions"
+          .footer-seperator
+            |
+          .footer-item
+            .fb-share-button{"data-href" => request.original_url, "data-layout" => "button_count", "data-mobile-iframe" => "true", "data-size" => "large"}
+              %a.fb-xfbml-parse-ignore{:href => "https://www.facebook.com/sharer/sharer.php?u=" + URI.encode(request.original_url) + "&src=sdkpreparse", :target => "_blank"} Share
+          .footer-seperator
+            |
+          .footer-item.twitter
+            %a.twitter-share-button{"data-size" => "large", :href => "https://twitter.com/intent/tweet"}
+              Tweet
+
